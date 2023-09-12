@@ -43,18 +43,18 @@ function Counties(){
     }
     function se(){
         var inpu=document.getElementById('in').value
-       var s= country.filter((c)=>{
-            return(c.name.common.startsWith(inpu))
+       var Counties= country.filter((c)=>{
+            return(c.name.common.toLowerCase().startsWith(inpu))
         })
-        console.log(s)
-        setCountry([...country])
+        console.log(Counties)
+        setCountry(Counties)
     }
 
 
     
 
     return(
-        <div className="card w-50">     
+        <div className="card w-70">     
              <div>  
              <div className="box">
                 <b>Sort by population:</b>

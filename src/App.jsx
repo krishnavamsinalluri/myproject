@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="box">
     
-      <Link to="/Country">Countryes</Link>
+      <Link to="/Country">Countries</Link>
       <Outlet></Outlet>
 
     </div>
