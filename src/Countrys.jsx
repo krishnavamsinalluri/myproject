@@ -48,6 +48,7 @@ function Counties(){
         })
         console.log(Counties)
         setCountry(Counties)
+
     }
 
 
@@ -62,7 +63,7 @@ function Counties(){
                 <i onClick={de}> Dessending order</i> 
                 &nbsp;&nbsp;&nbsp;&nbsp;
                        <input type="text"   placeholder="search" id="in"  onKeyUp={se}/> 
-                       <i class="bi bi-search"></i>
+                       <i className="bi bi-search"></i>
 
               </div>
  

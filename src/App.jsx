@@ -5,8 +5,8 @@ import {Link,Outlet}  from "react-router-dom"
 function App() {
   return (
     <div className="box">
-    
-      <Link to="/Country">Countries</Link>
+    <div className="heading"> <Link to="/Country">Countries</Link>
+          </div>
       <Outlet></Outlet>
 
     </div>
