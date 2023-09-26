@@ -1,0 +1,13 @@
+{
+    "sweeats": [
+      { "id": 1, "title": "kova", "qulitly": "1kg" },
+      { "id": 2, "title": "kova gaji kaya", "qulitly": "1kg" },
+      { "id": 3, "title": "Ladu", "qulitly": "1kg" }
+
+
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }
