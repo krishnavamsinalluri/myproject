@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
-import boostrap
+import boostrap from "boostrap/dist/css/boostrap.min"
 function State(){
 
     var [data,setData]=React.useState([])
@@ -16,7 +16,7 @@ function State(){
             {
                 data.map((a)=>{
                 return(
-                    <div className="">
+                    <div className="card">
                  <h4>{a.category}</h4>
                  <h6>{a.price}</h6>
 
