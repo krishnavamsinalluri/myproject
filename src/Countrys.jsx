@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
-import boostrap from "boostrap/dist/css/boostrap.min"
+import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
 function State(){
 
     var [data,setData]=React.useState([])
@@ -13,13 +13,14 @@ function State(){
 
     return (
         <div>
+            <div className="d-flex flex-wrap justify-content ">
             {
                 data.map((a)=>{
                 return(
-                    <div className="card">
+                    <div className="  card m-3 p-5">
                  <h4>{a.category}</h4>
                  <h6>{a.price}</h6>
-                 <img src={a.image}/>
+                    <img style={{width:'100px'}} src={a.image} alt="" />
 
                     </div>
 
@@ -28,6 +29,8 @@ function State(){
 
                 })
            }
+
+            </div>
         </div>
     )
 
