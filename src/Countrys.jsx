@@ -19,6 +19,7 @@ function State(){
                     <div className="card">
                  <h4>{a.category}</h4>
                  <h6>{a.price}</h6>
+                 <img src={a.image}/>
 
                     </div>
 
