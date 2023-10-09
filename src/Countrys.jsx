@@ -10,9 +10,31 @@ function State(){
             setData([...res.data])
         })
     },[])
+            function abc(){
+                data.sort((a,b)=>{
+                var car1=a.price
+                var car2=b.price
+                if(car1<car2){
+                    return -1
+                }
+                if(car1>car2){
+                    return 1
+                }
+                return 0
+                })
+            }
+                function high(){}
 
     return (
         <div>
+           <div>
+            <div className="box">
+            <i onClick={abc}>price low to high</i>
+            <i onClick={high}>price high to low</i>
+
+
+
+            </div>
             <div className="d-flex flex-wrap justify-content ">
             {
                 data.map((a)=>{
@@ -32,7 +54,9 @@ function State(){
 
             </div>
         </div>
-    )
+        </div>
+
+        )
 
 }
 export default State
