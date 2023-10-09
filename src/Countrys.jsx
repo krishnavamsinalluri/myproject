@@ -22,6 +22,7 @@ function State(){
                 }
                 return 0
                 })
+                setData([...data])
             }
                 function high(){}
 
@@ -29,7 +30,8 @@ function State(){
         <div>
            <div>
             <div className="box">
-            <i onClick={abc}>price low to high</i>
+
+            <i onClick={abc}>price low to high</i>  
             <i onClick={high}>price high to low</i>
 
 
