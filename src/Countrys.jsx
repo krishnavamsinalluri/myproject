@@ -42,7 +42,10 @@ function State(){
                 function sea(){
                     
                     var u=document.getElementById("s").value
-                    
+                    var search=data.filter((c)=>{
+                        return (c.category.startsWith(u).toLowercase())
+                    })
+                   setData([...search]) 
                 }
 
     return (
