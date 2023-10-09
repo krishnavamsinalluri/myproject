@@ -24,15 +24,35 @@ function State(){
                 })
                 setData([...data])
             }
-                function high(){}
+                function high(){
+                    data.sort((a,b)=>{
+                        var car1=a.price
+                        var car2=b.price
+                        if(car1<car2){
+                            return -1
+                        }
+                        if(car1>car2){
+                            return 1
+                        }
+                        return 0
+                        })
+                        setData([...data])
+                  
+                }
+                function sea(){
+                    
+                    var u=document.getElementById("s").value
+                    
+                }
 
     return (
         <div>
            <div>
             <div className="box">
-
-            <i onClick={abc}>price low to high</i>  
-            <i onClick={high}>price high to low</i>
+            <b>sort by price:</b>&nbsp;
+            <i onClick={abc}>price low to high</i>  &nbsp;&nbsp;&nbsp;
+            <i onClick={high}>price high to low</i>  &nbsp;&nbsp;&nbsp;
+            <input type="text"  onKeyUp={sea} id="s"/>
 
 
 
