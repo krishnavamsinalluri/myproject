@@ -18,7 +18,17 @@ export const hospApi = createApi({
         }
       }
     }),
+    addBeds:builder.mutation({
+      query:(details)=>{
+        console.log(details)
+        return{
+          url:`/${details.id}`,
+          method:"PUT",
+          body:details
 
+        }
+      }
+    })
     }),
 })
 
@@ -26,6 +36,7 @@ export const hospApi = createApi({
 // auto-generated based on the defined endpoints
 export const { 
     useGetAllHospitalsQuery,
-    useAddHospitalMutation
+    useAddHospitalMutation,
+    useAddBedsMutation
  } =hospApi
  export default hospApi

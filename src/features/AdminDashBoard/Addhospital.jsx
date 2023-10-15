@@ -7,6 +7,7 @@ function Addhostipal(){
         bed:"",
         price:0
     })
+    
     var [addBedtypes,setAddBedtypes]=useState([])
     var [addHospital]=useAddHospitalMutation()
     function addBedtype(){
@@ -93,6 +94,19 @@ function Addhostipal(){
 
            />
            <br />
+            <ul>
+              {
+                addBedtypes.length>0 && (<u>selected bedTypes</u>)
+              }
+              {
+                addBedtypes.length>0 && addBedtypes.map((a)=>{
+                  return <li>
+                    <i>{a.bedTypes}</i> &nbsp;
+                    <b>{a.price}</b>&nbsp;
+                  </li>
+                })
+              }
+            </ul>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add bedTypes
             </button>
 
