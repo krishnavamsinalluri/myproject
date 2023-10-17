@@ -15,6 +15,7 @@ import Addhostipal from './features/AdminDashBoard/Addhospital';
 import Addbed from './features/Addbed';
 import { Provider } from "react-redux"
 import { store } from "./app/store"
+import HospitalDetails from './features/Hospital/HosipalDelaits';
 
 const router = createBrowserRouter([
   {
@@ -36,12 +37,17 @@ const router = createBrowserRouter([
         
       ]
     },
+    {
+      path:"/details/:id",
+      element:<HospitalDetails></HospitalDetails>
+    },
        {path:"",
         element:<Home></Home>
       }
       
     ]
  },
+
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -1,10 +1,6 @@
 import React,{useEffect, useState} from "react";
 import { useGetAllHospitalsQuery,useAddBedsMutation } from "../servivces/hospApi";
 import { json } from "react-router-dom";
-
-
-
-
 function AddBed(){
 var {isLoading:isHospitalsLoading,data:hospitals}=useGetAllHospitalsQuery()
 var [addBedsToDB]=useAddBedsMutation();
@@ -13,11 +9,11 @@ var [bedprice,setBedPrice]=useState(0)
 var [selectedBedtype,setSelectedBedtype]=useState("")
 var [selectedHospital,setSelectedHospital]=useState(null)
 var [bedTypes,setBedtypes]=useState('')
-
+console.log(selectedHospital)
 
 function savebeds(){
     var newbeds=[];
-    // console.log("selectedhospital:",selectedHospital)
+    console.log("selectedhospital::",selectedHospital)
 var numBeds=selectedHospital.beds.filter(b=>b.bedType===selectedBedtype).length;
     for(var i=0;i<=bedcount-1;i++)
     {
@@ -33,7 +29,7 @@ var numBeds=selectedHospital.beds.filter(b=>b.bedType===selectedBedtype).length;
     }
     var latestHospitalDetails={...selectedHospital,beds:[...selectedHospital.beds,...newbeds]}
     setSelectedHospital({...selectedHospital,beds:[...selectedHospital.beds,...newbeds]})
-  addBedsToDB(latestHospitalDetails)
+ addBedsToDB(latestHospitalDetails)
 }
 
     return(
@@ -66,7 +62,7 @@ var numBeds=selectedHospital.beds.filter(b=>b.bedType===selectedBedtype).length;
                     <option value={null} disabled selected>Select Bedtype</option>
                     {
                         selectedHospital.bedTypes.map(function(b){
-                        return <option value={b.bedType}>{b.bedType}</option>
+                        return <option value={b.bedType}>{b.bedTypes}</option>
                         })
                             
                     }

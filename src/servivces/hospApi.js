@@ -9,6 +9,9 @@ export const hospApi = createApi({
     getAllHospitals: builder.query({
       query: () => ``,
     }),
+    getHospaitalDetailsById: builder.query({
+      query:()=>`${id}`,
+    }),
     addHospital: builder.mutation({
       query:(newHosp)=>{
         return {
@@ -37,6 +40,7 @@ export const hospApi = createApi({
 export const { 
     useGetAllHospitalsQuery,
     useAddHospitalMutation,
-    useAddBedsMutation
+    useAddBedsMutation,
+    useGetHospaitalDetailsByIdQuery,
  } =hospApi
  export default hospApi
