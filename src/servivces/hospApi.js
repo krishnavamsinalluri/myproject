@@ -10,7 +10,7 @@ export const hospApi = createApi({
       query: () => ``,
     }),
     getHospaitalDetailsById: builder.query({
-      query:()=>`${id}`,
+      query:(id)=>`/${id}`,
     }),
     addHospital: builder.mutation({
       query:(newHosp)=>{
@@ -42,5 +42,7 @@ export const {
     useAddHospitalMutation,
     useAddBedsMutation,
     useGetHospaitalDetailsByIdQuery,
+    useLazyGetAllHospitalsQuery,
+    useLazyGetHospaitalDetailsByIdQuery
  } =hospApi
  export default hospApi
