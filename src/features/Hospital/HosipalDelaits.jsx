@@ -60,19 +60,18 @@ function HospitalDetails(){
     })
     console.log( "tempbeds:",tempBeds)
     var bedsByCategory=_.groupBy(tempBeds,"bedtype")
-    setBeds(bedsByCategory)
+    setBeds(bedsByCategory);
+  }
+  function updateHospital(){
+    console.clear()
+    var temp = Object.values(beds).flat(1)
+    data= {...data,beds:[...temp]}
+    updateBeds(data).then(()=>{alert("update succes")
+    getHospitalDetails(p.id)
+  })
+    console.log(temp)
 
-    function updateHospital(){
-      console.clear()
-      var temp = Object.values(beds).flat(1)
-      data= {...data,beds:[...temp]}
-      updateBeds(data).then(()=>{alert("update succes")
-      getHospitalDetails(p.id)
-    })
-      console.log(temp)
 
-
-    }
   }
     return (
         <div>
@@ -102,7 +101,7 @@ function HospitalDetails(){
                       })
                     }
                   </ul>
-                  <button onClick={()=>{updateHospital()}}>BookIT</button>
+                  <button onClick={()=>{updateHospital()}}>Bookit</button>
                   
                 </div>
       
