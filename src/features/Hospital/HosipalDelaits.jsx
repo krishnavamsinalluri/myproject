@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAddBedsMutation, useGetHospaitalDetailsByIdQuery, useLazyGetAllHospitalsQuery, useLazyGetHospaitalDetailsByIdQuery } from "../../servivces/hospApi";
-import _ from "lodash"
+import _ from "lodash";
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from "../../firebase";
 import { useEffect } from "react";
-import { object } from "yup";
+const provider = new GoogleAuthProvider();
 function HospitalDetails(){
   var p = useParams();
    var[updateBeds]= useAddBedsMutation()
@@ -11,14 +13,12 @@ function HospitalDetails(){
   var {isLoading,data}=useGetHospaitalDetailsByIdQuery(p.id);
   var [beds,setBeds]=useState(null)
   var [bedTypes,setBedTypes]=useState([])
+  var [selectbed,setSelectedBed]=React.useState(-1)
 
-  var bedsByCategory = _.groupBy(data.beds,"bedtype");
-  console.log(data)
-  console.log(p)
-  useEffect(()=>{
+     useEffect(()=>{
     if(data){
-      var bedsByCategory= _.groupBy(data.beds,"bedtype");
-      console.log(bedsByCategory)
+      var bedsByCategory= _.groupBy(data.beds,"bedType");
+      console.log(bedsByCategory);
       setBeds(bedsByCategory)
         var temp=[]
         for(var k in bedsByCategory){
@@ -28,22 +28,9 @@ function HospitalDetails(){
 
       
     }
-  },[data])
-  useEffect(()=>{
-    if(data){
-      var bedsByCategory= _.groupBy(data.beds,"bedtype");
-      console.log(bedsByCategory)
-      setBeds(bedsByCategory)
-   }
-  },[beds])
-    useEffect(()=>{
- 
-      console.log("bedTypes:",beds)
-
-   
-    },[beds])
-    
+  },[data]);
   function occupyBed(bid){
+        setSelectedBed(bid)
     console.clear()
     console.log(data)
      var tempBeds =data.beds;
@@ -59,19 +46,23 @@ function HospitalDetails(){
 
     })
     console.log( "tempbeds:",tempBeds)
-    var bedsByCategory=_.groupBy(tempBeds,"bedtype")
+    var bedsByCategory=_.groupBy(tempBeds,"bedType")
     setBeds(bedsByCategory);
+    
   }
   function updateHospital(){
-    console.clear()
-    var temp = Object.values(beds).flat(1)
-    data= {...data,beds:[...temp]}
-    updateBeds(data).then(()=>{alert("update succes")
-    getHospitalDetails(p.id)
-  })
-    console.log(temp)
+    signInWithPopup(auth,provider)
+    .then((result)=>{
 
-
+        const credential=GoogleAuthProvider.credentialFromResult(result)
+        const token=credential.accessToken;
+        const user=result.user
+     console.clear()
+     console.log(beds)
+     console.log(user)
+     console.log(token)
+    // var temp = Object.values(beds).flat(1);
+})
   }
     return (
         <div>
@@ -85,14 +76,14 @@ function HospitalDetails(){
                   <h1>{data.hospitalName.toUpperCase()}</h1>
                   <ul>
                     {
-                      bedTypes.map((t)=>{
-                        return <li>{t}-{beds[t].lenght}
+                      bedTypes.map((t,i)=>{
+                        return <li key={i}>{t}-{beds[t].lenght}
                         <br />
                         {
                           beds[t].map((bed)=>{
                             return (<>
                            { bed.bedStatus==="open" &&<i className="bi bi-clipboard m-2" onClick={()=>{occupyBed(bed.bedId)}}></i>}
-                           {bed.bedStatus==="occuiped" && <i className="bi bi-clipboard-fill m-2" onClick={()=>{occupyBed(bed.bedId)}}></i>}
+                           {bed.bedStatus==="occuiped" && <i  class="bi bi-clipboard-fill h3 m-2" onClick={()=>{occupyBed(bed.bedId)}}></i>}
 
                             </>)
                           })

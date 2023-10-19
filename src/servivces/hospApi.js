@@ -4,13 +4,13 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // Define a service using a base URL and expected endpoints
 export const hospApi = createApi({
   reducerPath: 'hospApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/hospitals' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/hospitals/' }),
   endpoints: (builder) => ({
     getAllHospitals: builder.query({
       query: () => ``,
     }),
     getHospaitalDetailsById: builder.query({
-      query:(id)=>`/${id}`,
+      query:(id)=>`${id}`,
     }),
     addHospital: builder.mutation({
       query:(newHosp)=>{
