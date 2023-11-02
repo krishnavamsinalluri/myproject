@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import bootstrap from  "bootstrap"
 function Restdata(){
 
     var [contry,SetContry]=useState([])
@@ -12,21 +13,20 @@ function Restdata(){
 
     
 
-    return(
+    return (
         <div className="box">
-            <div className="card">
-            {
-                contry.map((a)=>{
-
-                    return (<div className="box">
-                        
-                        <h1>{a.name.common}</h1>
-
-                    </div>)
-                })
-            }
-            </div>
-       </div>
+        {
+        contry.map((a)=>{
+            return( 
+                <div className="m-3 p-5">
+                    <h5> Name:{a.name.common}</h5>
+                    <img  style={{width:"200px"}}src={a.flags[1]}alt="" />
+                    <h5> population:{a.population}</h5>
+                </div>
+            )
+         })
+         }
+     </div>
     )
 
 }
