@@ -67,7 +67,7 @@ function Counties(){
 
               </div>
  
-            <div className="d-flex flex-wrap justify-content">
+                <div className="d-flex flex-wrap justify-content">
                 {
                 country.map((a)=>{
                     return( 
