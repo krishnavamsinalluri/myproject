@@ -16,15 +16,11 @@ function Restdata(){
     return (
         <div className="box">
         {
-        contry.map((a)=>{
-            return( 
-                <div className="m-3 p-5">
-                    <h5> Name:{a.name.common}</h5>
-                    <img  style={{width:"200px"}}src={a.flags[1]}alt="" />
-                    <h5> population:{a.population}</h5>
-                </div>
-            )
-         })
+        contry.map( function(a){
+            return <div className="box">
+                <h1>{a.name.common}</h1>
+            </div>
+        })
          }
      </div>
     )
