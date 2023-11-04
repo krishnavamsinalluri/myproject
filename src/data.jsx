@@ -14,13 +14,45 @@ function Restdata(){
         function ab(){
             var se=document.getElementById("dd").value;
             var u=contry.filter((c)=>{
-                return (c.name.common.startsWith(se).toLowerCase())
+                return (c.name.common.toLowerCase().startsWith(se))
             })
             SetContry([...u])
         }
-    return (
+        function as(){
+            contry.sort((a,b)=>{
+                var car1=a.population
+                var car2=b.population
+                if(car1<car2){
+                    return -1
+                }
+                if(car1>car2){
+                    return 1
+                }
+                return 0
+            })
+            SetContry([...contry])
+
+        }
+            function de(){
+                contry.sort((a,b)=>{
+                    var car1=a.population
+                    var car2=b.population
+                    if(car1<car2){
+                        return 1
+                    }
+                    if(car1>car2){
+                        return -1
+                    }
+                    return 0
+                })
+                SetContry([...contry])
+
+                }
+             return (
         <div className="card w-90">
             <div className="box">
+                <button onClick={as}>assending order</button>
+                <button onClick={de}>desending order</button>
                 <input type="text" placeholder="search" id="dd" onChange={ab}/>
 
             </div>
@@ -29,7 +61,8 @@ function Restdata(){
          contry.map( function(a){
             return <div className="m-3 p-3">
                 <h1>{a.name.common}</h1>
-            <img width="200px"  src={a.flags[1]}></img>
+            <img width="200px"  src={a.flags[1]} alt=""></img>
+            <b>{a.population}</b>
             </div>
         })
         }
