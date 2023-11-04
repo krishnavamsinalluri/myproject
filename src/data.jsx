@@ -6,7 +6,7 @@ function Restdata(){
     React.useEffect(()=>{
         axios.get("https://restcountries.com/v3/all").then(function(res){
             console.log(res.data);
-            SetContry(res.data)
+            SetContry([...res.data])
         })
         
     },[]);
@@ -16,7 +16,7 @@ function Restdata(){
             var u=contry.filter((c)=>{
                 return (c.name.common.startsWith(se).toLowerCase())
             })
-            SetContry(u)
+            SetContry([...u])
         }
     return (
         <div className="card w-90">
