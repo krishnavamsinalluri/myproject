@@ -4,6 +4,7 @@ import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
 function State(){
 
     var [data,setData]=React.useState([])
+
      React.useEffect(()=>{
         axios.get("https://fakestoreapi.com/products").then((res)=>{
             console.log(res.data)
@@ -37,7 +38,6 @@ function State(){
                         return 0
                         })
                         setData([...data])
-                  
                 }
                 function sea(){
                     
@@ -65,7 +65,7 @@ function State(){
                  <h4>{a.category}</h4>
                  <h6> $:{a.price}</h6>
                     <img style={{width:'100px'}} src={a.image} alt="" />
-                    <button class="btn btn-primary">Add to card</button>
+                    <button className="btn btn-primary">Add to card</button>
                     </div>
 
                 )
