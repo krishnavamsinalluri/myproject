@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 }from "react-router-dom"
+import Addcart from './cart';
 const router= createBrowserRouter([
   {
     path:"/",
@@ -20,7 +21,14 @@ const router= createBrowserRouter([
 
     },{
       path:"/shopping",
-      element:<State></State>
+      element:<State></State>,
+      children:[
+        [{
+          path:"/shopping/addtocart",
+          element:<Addcart></Addcart>
+        }
+        ]
+      ]
     }
 
     ]

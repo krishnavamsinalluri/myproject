@@ -1,6 +1,7 @@
 import React from "react";
 import State from "./Countrys";
 import Home from "./Home";
+import Addcart from "./cart";
 import { Link, Outlet } from "react-router-dom";
 function App(){
 

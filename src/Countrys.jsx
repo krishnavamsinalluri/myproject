@@ -49,7 +49,9 @@ function State(){
                 }
 
     return (
-        <div className="card ">
+        <div className="row">           
+
+        <div className="card col-8">
            <div>
             <div className="box">
             <b>sort by price:</b>&nbsp;
@@ -57,7 +59,7 @@ function State(){
             <i onClick={high}>price high to low</i>  &nbsp;&nbsp;&nbsp;
             <input type="text" placeholder="search" onKeyUp={sea} id="s"/>
             </div>
-            <div className="d-flex flex-wrap justify-content ">
+                 <div className="d-flex flex-wrap justify-content ">
             {
                 data.map((a)=>{
                 return(
@@ -65,7 +67,8 @@ function State(){
                  <h4>{a.category}</h4>
                  <h6> $:{a.price}</h6>
                     <img style={{width:'100px'}} src={a.image} alt="" />
-                    <button className="btn btn-primary">Add to card</button>
+                    <button className="btn btn-primary" >Add to card</button>
+
                     </div>
 
                 )
@@ -75,10 +78,16 @@ function State(){
            }
 
             </div>
+        
         </div>
         </div>
-
+        <div className="col"></div>
+        </div>
+        
         )
+        
+
 
 }
+
 export default State
