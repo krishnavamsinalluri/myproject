@@ -51,9 +51,6 @@ function Counties(){
 
     }
 
-
-    
-
     return(
         <div className="card w-70">     
              <div>  
@@ -82,9 +79,6 @@ function Counties(){
              </div>
          </div>
          </div>
-  
-
     )
-
 }
 export  default Counties
