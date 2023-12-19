@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Counties from './Countrys';
+import Name from './Countryname';
 import {
     createBrowserRouter,
     RouterProvider,
@@ -15,7 +16,12 @@ import {
       children:[
         {
           path:"/Country",
-          element:<Counties></Counties>
+          element:<Counties></Counties>,
+          children:[{
+            path:"/Country/Cname",
+            element:<Name></Name>
+
+          }]
         }
       ]
     },

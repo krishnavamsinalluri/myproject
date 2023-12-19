@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
+import {Link,Outlet} from "react-router-dom"
 function Counties(){
 
     var[country,setCountry]=React.useState([])
@@ -69,16 +70,20 @@ function Counties(){
                 country.map((a)=>{
                     return( 
                         <div className="m-3 p-5">
-                            <h5> Name:{a.name.common}</h5>
+                            <h5> <Link to={"/Country/Cname"}>{a.name.common}</Link></h5>
                             <img  style={{width:"200px"}}src={a.flags[1]}alt="" />
                             <h5> population:{a.population}</h5>
+                            <div>
+                                <Outlet></Outlet>
+                            </div>
                         </div>
                     )
                  })
                  }
              </div>
          </div>
-         </div>
+
+        </div>
     )
 }
 export  default Counties
