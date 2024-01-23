@@ -81,7 +81,9 @@ function State(){
         
         </div>
         </div>
-        <div className="col"></div>
+        <div className="col">
+            
+        </div>
         </div>
         
         )
