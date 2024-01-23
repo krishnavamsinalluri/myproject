@@ -60,8 +60,8 @@ function Restdata(){
             {
          contry.map( function(a){
             return <div className="m-3 p-3">
+             <img width="200px"  src={a.flags[1]} alt=""></img>
                 <h1>{a.name.common}</h1>
-            <img width="200px"  src={a.flags[1]} alt=""></img>
             <b>{a.population}</b>
             </div>
         })
