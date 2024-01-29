@@ -1,8 +1,16 @@
-import { useGetAllProductsByNameQuery } from "../severs/product"
+import { useDeleteProductMutation, useGetAllProductsByNameQuery, useLazyGetAllProductsByNameQuery } from "../severs/product"
 
 function Products(){
    var {data} =useGetAllProductsByNameQuery()
+   var [fn]=useDeleteProductMutation()
+   var [rfun]=useLazyGetAllProductsByNameQuery()
    console.log(data)
+    function Productdelte(id){
+        fn(id).then((res)=>{
+            rfun()
+        })
+    }
+
     return(
         <div className="card">
         <ul className="d-flex flex-wrap">
@@ -14,6 +22,7 @@ function Products(){
                     <img style={{width:"100px"}} src={b.image} alt="" />
                     <br />
                     <b>{b.price}</b>
+                    <button onClick={()=>{Productdelte(b.id)}}>Delete</button>
                     </li>
                 )
 

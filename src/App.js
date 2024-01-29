@@ -5,7 +5,8 @@ function App() {
   return (
       <div className="box ">
         <Link to="/countrys">Countries</Link>&nbsp;&nbsp;
-        <Link to="/products">Productes</Link>
+        <Link to="/products">Productes</Link>&nbsp;&nbsp;
+        <Link to="/addproducts">Add product</Link>
         <div className="box">
           <Outlet></Outlet>
         </div>

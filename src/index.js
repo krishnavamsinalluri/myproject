@@ -13,6 +13,7 @@ import {
 import Countires from './feauters/Country';
 import Products from './feauters/Product';
 import Details from './feauters/Countrydetails';
+import Addproduct from './feauters/Addproducts';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,8 +31,11 @@ const router = createBrowserRouter([
       {
         path:"/products",
         element:<Products></Products>
-   
 
+      },
+      {
+        path:"/addproducts",
+        element:<Addproduct></Addproduct>
       }
    ]
   },
