@@ -3,9 +3,9 @@ import { useAddProductMutation } from "../severs/product"
 
 function Addproduct(){
      var [fu]  = useAddProductMutation()
-       var prodctform= useFormik({
+       var prodctForm= useFormik({
         initialValues:{
-            "title":"sdh",
+            "title":"",
            " price":0,
            "description":"",
            "category":"",
@@ -24,12 +24,12 @@ function Addproduct(){
     return(
         <div>
     <h1>add</h1>
-        <form onSubmit={prodctform.handleSubmit}>
-            <input type="text" placeholder="title" value={prodctform.values.title} name="title" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/> <br />
-            <input type="text"placeholder="price"  name="price" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br />
-            <input type="text"placeholder="description" name="description" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br />
-            <input type="text"placeholder="category" name="category" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br />
-            <input type="text" placeholder="image"name="image" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br /> <br />
+        <form onSubmit={prodctForm.handleSubmit}>
+            <input type="text" placeholder="title"  name="title" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/> <br />
+            <input type="text"placeholder="price"  name="price" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            <input type="text"placeholder="description" name="description" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            <input type="text"placeholder="category" name="category" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            <input type="text" placeholder="image"name="image" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br /> <br />
         <button className="btn btn-secondary" >Add Products</button>
         </form>
 

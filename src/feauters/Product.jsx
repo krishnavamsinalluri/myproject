@@ -6,7 +6,7 @@ function Products(){
    var [fn]=useDeleteProductMutation()
    var [rfun]=useLazyGetAllProductsByNameQuery()
      var nav =   useNavigate()
-   console.log(data)
+     //console.log ("pdata"+data)
     function Productdelte(id){
         fn(id).then((res)=>{
             rfun()
@@ -21,7 +21,7 @@ function Products(){
         <div className="card">
         <ul className="d-flex flex-wrap">
         {
-            data && data.map((b)=>{
+           data && data.map((b)=>{
                 return (
                     <li className="card w-50px m-3 p-3">
                         {b.title}

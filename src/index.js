@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element:<Addproduct></Addproduct>
       },
       {
-        path:'/editprodocts/:id',
+        path:'/editprodocts/:pid',
         element:<Edit></Edit>
 
       }
