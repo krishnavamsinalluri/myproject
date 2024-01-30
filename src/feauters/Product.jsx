@@ -27,9 +27,10 @@ function Products(){
                         {b.title}
                     <img style={{width:"100px"}} src={b.image} alt="" />
                     <br />
-                    <b>{b.price}</b>
-                    <i class="bi bi-trash3-fill" onClick={()=>{Productdelte(b.id)}}></i>
-                          <i class="bi bi-pencil-square" onClick={()=>{Productedit(b.id)}}></i>
+                    <b>${b.price}</b>
+                    
+                    <i class="bi bi-trash3-fill" onClick={()=>{Productdelte(b.id)}}>Delete</i>&nbsp;&nbsp;&nbsp;
+                          <i class="bi bi-pencil-square" onClick={()=>{Productedit(b.id)}}>Edit</i>
 
                     </li>
                 )

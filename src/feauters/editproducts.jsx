@@ -1,18 +1,17 @@
 import { useFormik } from "formik"
 import { useParams } from "react-router-dom"
-import {  useGetProductsByIdQuery, useUpdateProductMutation } from "../severs/product"
+import {  useGetProductsByIdQuery, useUpdataProductMutation,  } from "../severs/product"
 import React,{useEffect} from "react"
 
 function Edit(){
     var {pid}= useParams()
-    console.log(pid)
+   /// console.log(pid)
     var {data}=useGetProductsByIdQuery(pid)
-    console.log(data)
-    var [fnp] = useUpdateProductMutation()
+  //  console.log(data)
+    var [fnp] = useUpdataProductMutation()
     var prodctForm= useFormik({
-        initialValues:data,
+        initialValues:{title:""},
         onSubmit:(values)=>{ 
-            console.log("val"+values)
             fnp(values).then(()=>{
                 alert("update...")
             })
@@ -21,7 +20,7 @@ function Edit(){
         useEffect(() => {
             if (data) {
               prodctForm.setValues(data);
-              console.log(data)
+              //console.log(data)
             }
           }, [data,prodctForm]);
         
