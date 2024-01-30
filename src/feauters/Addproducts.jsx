@@ -5,7 +5,7 @@ function Addproduct(){
      var [fu]  = useAddProductMutation()
        var prodctform= useFormik({
         initialValues:{
-            "title":"",
+            "title":"sdh",
            " price":0,
            "description":"",
            "category":"",
@@ -22,12 +22,12 @@ function Addproduct(){
         <div>
     <h1>add</h1>
         <form onSubmit={prodctform.handleSubmit}>
-            <input type="text" name="title" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/>
-            <input type="text" name="price" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/>
-            <input type="text" name="description" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/>
-            <input type="text" name="category" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/>
-            <input type="text" name="image" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/>
-        <button >add</button>
+            <input type="text" placeholder="title" value={prodctform.values.title} name="title" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/> <br />
+            <input type="text"placeholder="price"  name="price" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br />
+            <input type="text"placeholder="description" name="description" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br />
+            <input type="text"placeholder="category" name="category" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br />
+            <input type="text" placeholder="image"name="image" onChange={prodctform.handleChange} onBlur={prodctform.handleBlur}/><br /> <br />
+        <button className="btn btn-secondary" >Add Products</button>
         </form>
 
         </div>

@@ -1,14 +1,20 @@
+import { useNavigate,  } from "react-router-dom"
 import { useDeleteProductMutation, useGetAllProductsByNameQuery, useLazyGetAllProductsByNameQuery } from "../severs/product"
 
 function Products(){
    var {data} =useGetAllProductsByNameQuery()
    var [fn]=useDeleteProductMutation()
    var [rfun]=useLazyGetAllProductsByNameQuery()
+     var nav =   useNavigate()
    console.log(data)
     function Productdelte(id){
         fn(id).then((res)=>{
             rfun()
         })
+    }
+    function Productedit(id){
+        nav(`/editprodocts/${id}`)
+    
     }
 
     return(
@@ -22,7 +28,9 @@ function Products(){
                     <img style={{width:"100px"}} src={b.image} alt="" />
                     <br />
                     <b>{b.price}</b>
-                    <button onClick={()=>{Productdelte(b.id)}}>Delete</button>
+                    <i class="bi bi-trash3-fill" onClick={()=>{Productdelte(b.id)}}></i>
+                          <i class="bi bi-pencil-square" onClick={()=>{Productedit(b.id)}}></i>
+
                     </li>
                 )
 
