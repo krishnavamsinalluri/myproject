@@ -12,6 +12,7 @@ export const productApi = createApi({
     }),
     getAllProductsById:builder.query({
       query:(id)=>`/${id}`,
+    
     }),
     deleteProduct:builder.mutation({
       query:(id)=>{

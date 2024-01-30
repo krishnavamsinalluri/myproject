@@ -5,7 +5,7 @@ import React,{useEffect} from "react"
 
 function Edit(){
     var {pid}= useParams()
-    var {data}=useGetAllProductsByIdQuery(pid)
+    var {data,isLoading}=useGetAllProductsByIdQuery(pid)
     var [fnp] = useUpdateProductMutation()
     var prodctform= useFormik({
         initialValues: {title:""},
@@ -16,11 +16,9 @@ function Edit(){
             })
         }
         })
-        useEffect(()=>{
-            prodctform.setValues(data)
-        },[data])
-
-
+              React.useEffect(()=>{
+                    prodctform.setValues(data)
+                },[])
     return  (
         <div>
               {JSON.stringify(prodctform)}

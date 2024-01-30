@@ -10,11 +10,14 @@ function Addproduct(){
            "description":"",
            "category":"",
            "image":""
+           
 
         },
         onSubmit:(values)=>{ 
             console.log(values)
-            fu(values)
+            fu(values).then(()=>{
+                alert("ADDED...")
+            })
         }
 
         })
