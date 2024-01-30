@@ -23,7 +23,7 @@ function Addproduct(){
         })
     return(
         <div>
-    <h1>add</h1>
+
         <form onSubmit={prodctForm.handleSubmit}>
             <input type="text" placeholder="title" value={prodctForm.values.title} name="title" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/> <br />
             <input type="text"placeholder="price"  name="price" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
