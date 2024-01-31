@@ -15,6 +15,7 @@ import Products from './feauters/Product';
 import Details from './feauters/Countrydetails';
 import Addproduct from './feauters/Addproducts';
 import Edit from './feauters/editproducts';
+import Login from './feauters/login';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         
       },
       {
+        path:"",
+        element:<Login></Login>
+      },
+      {
         path:"/products",
         element:<Products></Products>
 
@@ -42,7 +47,8 @@ const router = createBrowserRouter([
         path:'/editprodocts/:pid',
         element:<Edit></Edit>
 
-      }
+      },
+
 
    ]
   },

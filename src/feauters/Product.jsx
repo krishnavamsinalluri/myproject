@@ -16,9 +16,25 @@ function Products(){
         nav(`/editprodocts/${id}`)
     
     }
+    function Addproduct(){
+    
+        nav("/addproducts")
+    }
 
     return(
-        <div className="card">
+        <div>
+           <div >
+           <nav class="navbar bg-primary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1"></span>
+                <h3 class="bi bi-plus-square-fill" onClick={()=>{Addproduct()}}>Add new products</h3>
+
+            </div>
+            </nav>
+
+            </div>
+
+          <div className="card">
         <ul className="d-flex flex-wrap">
         {
            data && data.map((b)=>{
@@ -31,7 +47,6 @@ function Products(){
                     
                     <i class="bi bi-trash3-fill" onClick={()=>{Productdelte(b.id)}}>Delete</i>&nbsp;&nbsp;&nbsp;
                           <i class="bi bi-pencil-square" onClick={()=>{Productedit(b.id)}}>Edit</i>
-
                     </li>
                 )
 
@@ -41,6 +56,8 @@ function Products(){
         }
         </ul>
         </div>
-    ) 
+   
+        </div>
+ ) 
 }
 export default Products
