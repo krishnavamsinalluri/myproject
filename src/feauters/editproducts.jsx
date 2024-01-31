@@ -10,19 +10,20 @@ function Edit(){
   //  console.log(data)
     var [fnp] = useUpdataProductMutation()
     var prodctForm= useFormik({
-        initialValues:{title:""},
+      initialValues: { title: "", price: "", description: "", category: "", image: "" },
         onSubmit:(values)=>{ 
-            fnp(values).then(()=>{
+            fnp(values).then((res)=>{
                 alert("update...")
+                console.log(res)
             })
         }
         })
         useEffect(() => {
             if (data) {
-              prodctForm.setValues(data);
+              prodctForm.setValues(data)
               //console.log(data)
             }
-          }, [data,prodctForm]);
+          }, [data]);
         
    return  (
         <div>

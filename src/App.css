@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+/*import { useFormik } from "formik"
+import { useParams } from "react-router-dom"
+import {  useGetProductsByIdQuery, useUpdataProductMutation,  } from "../severs/product"
+import React,{useEffect} from "react"
+
+function Edit(){
+    var {pid}= useParams()
+   /// console.log(pid)
+    var {data}=useGetProductsByIdQuery(pid)
+  //  console.log(data)
+    var [fnp] = useUpdataProductMutation()
+    var prodctForm= useFormik({
+      initialValues: { title: "", price: "", description: "", category: "", image: "" },
+        onSubmit:(values)=>{ 
+            fnp(values).then((res)=>{
+                alert("update...")
+                console.log(res)
+            })
+        }
+        })
+        useEffect(() => {
+            if (data) {
+              prodctForm.setValues((prevValues)=>({...prevValues,...data}));
+              //console.log(data)
+            }
+          }, [data]);
+        
+   return  (
+        <div>
+         <form onSubmit={prodctForm.handleSubmit}>
+            <input type="text" placeholder="title"  value={prodctForm.values?.title} name="title" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/> <br />
+            <input type="text"placeholder="price" value={prodctForm.values?.price}  name="price" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            <input type="text"placeholder="description" value={prodctForm.values?.description} name="description" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            <input type="text"placeholder="category"  value={prodctForm.values?.category} name="category" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            <input type="text" placeholder="image" value={prodctForm.values?.image} name="image" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br /> <br />
+        <button className="btn btn-secondary" >Update product</button>
+        </form>
+
+        </div>
+       )
+ }
+ export default Edit
+ import React, { useEffect } from "react";
+import { useFormik } from "formik";
+import { useParams } from "react-router-dom";
+import { useGetProductsByIdQuery, useUpdataProductMutation } from "../severs/product";
+
+function Edit() {
+  const { pid } = useParams();
+  const { data } = useGetProductsByIdQuery(pid);
+  const [fnp] = useUpdataProductMutation();
+
+  const prodctForm = useFormik({
+    initialValues: { title: "", price: 0, description: "", category: "", image: "" },
+    onSubmit: (values) => {
+      fnp(values).then((res) => {
+        alert("update...");
+        console.log(res);
+      });
+    },
+  });
+
+  useEffect(() => {
+    if (data) {
+      prodctForm.setValues((prevValues) => ({ ...prevValues, ...data }));
+    }
+  }, [data]); // Removed prodctForm from the dependency array
+
+  return (
+    <div>
+      <form onSubmit={prodctForm.handleSubmit}>
+        <input
+          type="text"
+          placeholder="title"
+          value={prodctForm.values?.title}
+          name="title"
+          onChange={prodctForm.handleChange}
+          onBlur={prodctForm.handleBlur}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="price"
+          value={prodctForm.values?.price}
+          name="price"
+          onChange={prodctForm.handleChange}
+          onBlur={prodctForm.handleBlur}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="description"
+          value={prodctForm.values?.description}
+          name="description"
+          onChange={prodctForm.handleChange}
+          onBlur={prodctForm.handleBlur}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="category"
+          value={prodctForm.values?.category}
+          name="category"
+          onChange={prodctForm.handleChange}
+          onBlur={prodctForm.handleBlur}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="image"
+          value={prodctForm.values?.image}
+          name="image"
+          onChange={prodctForm.handleChange}
+          onBlur={prodctForm.handleBlur}
+        />
+        <br />
+        <br />
+        <button type="submit" className="btn btn-secondary">
+          Update product</button>
+ 
+      </form>
+    </div>
+  );
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+export default Edit;

@@ -35,7 +35,7 @@ export const productApi = createApi({
       query:(product)=>{
         console.log("pr"+product)
         return{
-          url:`/$(product.id)`,
+          url:`/${product.id}`,
           method:"put",
           body:product
         }
