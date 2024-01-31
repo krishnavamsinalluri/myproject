@@ -20,21 +20,24 @@ function Products(){
     
         nav("/addproducts")
     }
+    function logout(){
+        nav("/")
+    }
 
     return(
-        <div>
-           <div >
+        <div >
+           
            <nav class="navbar bg-primary">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1"></span>
                 <h3 class="bi bi-plus-square-fill" onClick={()=>{Addproduct()}}>Add new products</h3>
+                <h3 class="navbar-brand mb-0 h1" onClick={()=>{logout()}}>Logout</h3>
 
             </div>
             </nav>
 
-            </div>
+        
 
-          <div className="card">
+          <div className="products">
         <ul className="d-flex flex-wrap">
         {
            data && data.map((b)=>{

@@ -24,12 +24,13 @@ function Login(){
         }
         })
         return(
-            <div className="main">
+            <div >
                 <form onSubmit={loginForm.handleSubmit} className="main">
+                        <h1>Welcome..</h1>
                  Username:   <input type="text" placeholder="username" name="username" onChange={loginForm.handleChange} /><br /><br />
                   Password:  <input type="text" placeholder="password" name="password" onChange={loginForm.handleChange} /><br />
-                  
-                    <button>login</button>
+                  <br />
+                    <button className="btn btn-primary">Save</button>
                 </form>
   
                             

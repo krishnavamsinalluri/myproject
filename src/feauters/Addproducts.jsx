@@ -37,12 +37,13 @@ function Addproduct(){
                 </nav>
             </div>
        <div className="card">
-        <form onSubmit={prodctForm.handleSubmit}>
+        <form onSubmit={prodctForm.handleSubmit} style={{textAlign:"center"}} className="addp">
+                <h1>Add A New Product</h1>
             <input type="text" placeholder="title" value={prodctForm.values.title} name="title" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/> <br />
             <input type="text"placeholder="price" value={prodctForm.values.price} name="price" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
             <input type="text"placeholder="description" value={prodctForm.values.description} name="description" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
             <input type="text"placeholder="category" value={prodctForm.values.category} name="category" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
-            <input type="text" placeholder="image"value={prodctForm.values.image} name="image" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br /> <br />
+            <input type="text" placeholder="image"value={prodctForm.values.image} name="image" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br /> 
         <button className="btn btn-secondary"  >Add Product</button>
         </form>
 
