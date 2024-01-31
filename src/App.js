@@ -4,8 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 function App() { 
   return (
       <div className="box ">
-        <Link to="/countrys">Countries</Link>&nbsp;&nbsp;
-        <div className="box">
+        <div className="">
           <Outlet></Outlet>
         </div>
       </div>
