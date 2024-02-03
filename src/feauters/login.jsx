@@ -13,24 +13,31 @@ function Login(){
         },
         onSubmit:(values)=>{ 
             lofn(values).then((res)=>{
+                window.localStorage.setItem("users",JSON.stringify(res.data))
                 if(res.data.length===0){
                     alert("cheeck details ")
                 }
                 else{
-                    navi('/products')
+                    navi('/dashbord')
                 }
             })
                   
         }
         })
         return(
-            <div>
+            <div className="card" >
                 <form onSubmit={loginForm.handleSubmit} className="main">
-                        <h1>Welcome..</h1>
-                 Username:   <input type="text" placeholder="username" name="username" onChange={loginForm.handleChange} /><br /><br />
-                  Password:  <input type="text" placeholder="password" name="password" onChange={loginForm.handleChange} /><br />
-                  <br />
-                    <button className="btn btn-primary">Save</button>
+                <img style={{width:"200px"}} src="" alt="" /><br></br>
+                        <img style={{width:"200px"}} src="" alt="" /><br></br>
+
+                
+                     <span>   <b style={{fontSize:"30px"}} className="text-dark">Welcome...</b></span> <span style={{fontSize:"30px"}} class="bi  bi-emoji-smile-upside-down"></span><span style={{fontSize:"30px"}} class="bi bi-emoji-smile"></span><br />
+                     <img style={{width:"200px"}} src="" alt="" /><br></br>
+                        <h1 class="bi bi-person-circle"></h1>
+                <b className="bi bi-person-fill">:</b>    <input type="text"  placeholder="Username" name="username" onChange={loginForm.handleChange} /><br /><br />
+                <b class="bi bi-lock-fill">:</b>    <input type="text" placeholder="password" name="Password" onChange={loginForm.handleChange} /><br /><br />
+                  
+                    <button className="btn btn-outline-dark">Save</button><br />
                 </form>
   
                             

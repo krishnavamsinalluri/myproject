@@ -10,11 +10,19 @@ export const productApi = createApi({
     getAllProductsByName: builder.query({
       query: () => `/`,
     }),
+    getProductsByName: builder.query({
+      query: () => `/`,
+    }),
+ 
     getProductsById:builder.query({
       query:(id)=>`/${id}`,
     
+    }),  
+    getorderByID:builder.query({
+      query:(id)=>`/buyprouct/${id}`,
+    
     }),
-    deleteProduct:builder.mutation({
+   deleteProduct:builder.mutation({
       query:(id)=>{
         return{
           url:`/${id}`,
@@ -46,4 +54,4 @@ export const productApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {useUpdataProductMutation, useGetProductsByIdQuery,useAddProductMutation, useGetAllProductsByNameQuery,useDeleteProductMutation,useLazyGetAllProductsByNameQuery } = productApi
+export const { useGetorderByIDQuery,useUpdataProductMutation,useGetProductsByNameQuery, useGetProductsByIdQuery,useAddProductMutation, useGetAllProductsByNameQuery,useDeleteProductMutation,useLazyGetAllProductsByNameQuery } = productApi

@@ -7,21 +7,50 @@
 
 }
 
+.home{
+    background-image:image-set("https://i.pinimg.com/originals/0e/b4/c2/0eb4c25fb70ae3f291d9d5523fda1269.jpg");
+    background-size:100%;
+    background-repeat: no-repeat;
+    height: 600px
+}
 .main{
     text-align: center;
-    border: 1px solid;
-    
-
-    background-image:image-set("https://img.freepik.com/free-photo/beautiful-scenery-summit-mount-everest-covered-with-snow-white-clouds_181624-21317.jpg?size=626&ext=jpg&ga=GA1.1.2126216559.1699334969&semt=sph");
+    background-image:image-set("https://www.ruleranalytics.com/wp-content/uploads/last-click-attribution-www.ruleranalytics.com_.png");
+    background-size:100%;
+    background-repeat: no-repeat;
+    height: 600px;
 }
 .addp{
-    background-image:image-set("https://img.freepik.com/free-photo/beautiful-scenery-summit-mount-everest-covered-with-snow-white-clouds_181624-21317.jpg?size=626&ext=jpg&ga=GA1.1.2126216559.1699334969&semt=sph");
+    background-image:image-set("https://img.freepik.com/premium-photo/black-friday-concept-with-cart-space_23-2147709970.jpg");
+    background-size:100%;
+    background-repeat: no-repeat;
+    height: 500px;
 
 }
 .editp{
-    background-image: image-set("https://wallpaperaccess.com/full/2314983.jpg");
+    background-image: image-set("https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg");
+    background-size:100%;
+    background-repeat: no-repeat;
+    height: 600px;
+
 }
 .products{
     background-image: image-set("https://png.pngtree.com/background/20220729/original/pngtree-abstract-background-white-and-light-gray-silver-style-modern-technology-geometric-picture-image_1859880.jpg");
 
 }
+.order{
+    text-align: center;
+    background-image:image-set("https://www.shutterstock.com/image-vector/delivery-service-woman-receiving-parcel-260nw-1775910743.jpg");
+    background-size:100%;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+.hed{
+    text-align: center;
+    color:crimson;
+}
+.cust{
+    background-image: image-set("https://png.pngtree.com/background/20220729/original/pngtree-abstract-background-white-and-light-gray-silver-style-modern-technology-geometric-picture-image_1859880.jpg");
+
+}
+

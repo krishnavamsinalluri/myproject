@@ -26,7 +26,7 @@ function Edit(){
             }
           }, [data]);
           function home(){
-            navi("/products")
+            navi("/dashbord")
           }
    return  (
         <div>
@@ -41,11 +41,16 @@ function Edit(){
           </div>
          <form onSubmit={prodctForm.handleSubmit} style={{textAlign:"center"}} className="editp">
               <h2>Updata A Product</h2>
-            <input type="text" placeholder="title"  value={prodctForm.values?.title} name="title" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/> <br />
-            <input type="text"placeholder="price" value={prodctForm.values?.price}  name="price" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
-            <input type="text"placeholder="description" value={prodctForm.values?.description} name="description" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
-            <input type="text"placeholder="category"  value={prodctForm.values?.category} name="category" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
-            <input type="text" placeholder="image" value={prodctForm.values?.image} name="image" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br /> <br />
+              Title :<br></br>
+            <input type="text" placeholder="Title"  value={prodctForm.values?.title} name="title" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/> <br />
+            Price :<br/>
+            <input type="text"placeholder="Price" value={prodctForm.values?.price}  name="price" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            Description :<br></br>
+            <input type="text"placeholder="Description" value={prodctForm.values?.description} name="description" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            Category :<br></br>
+            <input type="text"placeholder="Category"  value={prodctForm.values?.category} name="category" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br />
+            Image :<br></br>
+            <input type="text" placeholder="Image" value={prodctForm.values?.image} name="image" onChange={prodctForm.handleChange} onBlur={prodctForm.handleBlur}/><br /> <br />
         <button className="btn btn-success" >Update product</button>
         </form>
 

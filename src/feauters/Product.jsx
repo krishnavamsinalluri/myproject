@@ -20,17 +20,13 @@ function Products(){
     
         nav("/addproducts")
     }
-    function logout(){
-        nav("/")
-    }
 
     return(
         <div >
            
-           <nav class="navbar bg-primary">
+           <nav class="navbar bg-dark">
             <div class="container-fluid">
-                <h3 class="bi bi-plus-square-fill" onClick={()=>{Addproduct()}}>Add new products</h3>
-                <h3 class="navbar-brand mb-0 h1" onClick={()=>{logout()}}>Logout</h3>
+                <h3 class="bi bi-plus-square-fill navbar-brand mb-0 h1 text-light " onClick={()=>{Addproduct()}}><b className="text-light">Add new products</b></h3>
 
             </div>
             </nav>

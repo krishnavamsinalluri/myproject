@@ -16,6 +16,11 @@ import Details from './feauters/Countrydetails';
 import Addproduct from './feauters/Addproducts';
 import Edit from './feauters/editproducts';
 import Login from './feauters/login';
+import Dashboard from './feauters/dashboard';
+import Buyproduct from './feauters/Buyproduct';
+import Addtocart from './feauters/Addtocart';
+import Home from './feauters/Homepage';
+import Regiration from './feauters/Registration';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,12 +37,21 @@ const router = createBrowserRouter([
       },
       {
         path:"/",
+        element:<Home></Home>
+      },
+
+      {
+        path:"/login",
         element:<Login></Login>
       },
       {
+        path:"/regiration",
+        element:<Regiration></Regiration>
+      },
+  
+       {
         path:"/products",
         element:<Products></Products>
-
       },
       {
         path:"/addproducts",
@@ -47,7 +61,30 @@ const router = createBrowserRouter([
         path:'/editprodocts/:pid',
         element:<Edit></Edit>
 
+      },  
+      {
+        path:"/dashbord",
+        element:<Dashboard></Dashboard>,
       },
+          {
+            path:'/dashbord/addcart/:pid',
+            element:<Addtocart></Addtocart>
+    
+          },
+    
+          {
+            path:'/dashbord/buyprouct/:pid',
+            element:<Buyproduct></Buyproduct>
+    
+          },
+          
+
+        
+
+    
+      
+
+
 
 
    ]
