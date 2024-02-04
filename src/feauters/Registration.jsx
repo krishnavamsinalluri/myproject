@@ -7,7 +7,7 @@ function Regiration(){
   var navi=  useNavigate()
  var newusers =   useFormik({
         initialValues:{
-            "username":"","password":"","role":"","id":""
+            "username":"","password":"","role":"",
         },
 
     onSubmit:(values)=>{
