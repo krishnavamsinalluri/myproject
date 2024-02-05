@@ -53,7 +53,7 @@ return (
     <div>
     <div className="card">
     <form onSubmit={details.handleSubmit} className="order">
-               <h1>Please Enter Deliery Adderss</h1>
+               <h1>Please Enter Delivery Adderss</h1>
                     <img style={{width:"200px"}} src="https://thumbs.dreamstime.com/b/mobile-app-navigator-track-courier-delivering-online-shop-order-van-to-background-urban-landscape-vector-181619018.jpg?w=1600" alt="" /><br></br>
               Name :<br></br>
                 <input type="text" placeholder="Name"  value={details.values.name} name="name" onChange={details.handleChange} onBlur={details.handleBlur}/> <br />
