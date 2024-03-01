@@ -9,11 +9,11 @@ function Api() {
     console.log(res)}).catch("error")
     },[])
   return (
-    <div>
+    <div className='box'>
         {
             data.map((r)=>{
                 <div>
-                    <h1>{r.category}</h1>
+                    <h1>{r.price}</h1>
                 </div>
             })
         }
