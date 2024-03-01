@@ -14,8 +14,8 @@ function Form() {
   return (
     <div>
       <form onSubmit={deat.handleSubmit}>
-        <input type="text" name='name'  onChange={deat.handleChange}  /><br />
-        <input type="text"  name='age' onChange={deat.handleChange}/><br />
+     Name:   <input type="text" name='name'  onChange={deat.handleChange}  /><br />
+       Age: <input type="text"  name='age' onChange={deat.handleChange}/><br />
         <button>save</button>
 
       </form>
