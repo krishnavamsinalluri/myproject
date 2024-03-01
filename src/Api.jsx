@@ -12,10 +12,13 @@ function Api() {
     <div className='box'>
         {
             data.map((r)=>{
-                <div>
+                return (
+                    <div>
                     <h1>{r.price}</h1>
                 </div>
-            })
+ 
+                )
+           })
         }
     </div>
   )
