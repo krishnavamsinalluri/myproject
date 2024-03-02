@@ -5,7 +5,7 @@ function Incremint() {
   return (
     <div className='box'>
     
-        <button onClick={()=>{setCount(count+1)}}>lisk</button>
+        <button onClick={()=>{setCount(count+1)}}>like</button>
         <b>{count}</b>
         <button onClick={()=>{setCount(count-1)}}>dislike</button>
     </div>
