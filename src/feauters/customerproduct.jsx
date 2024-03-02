@@ -3,6 +3,7 @@ import { useGetProductsByNameQuery } from "../severs/product"
 
 function Customer(){
   var {data} = useGetProductsByNameQuery()
+  console.log(data)
  var navi= useNavigate()
   function buyprodut(id){
         navi(`/dashbord/buyprouct/${id}`)
