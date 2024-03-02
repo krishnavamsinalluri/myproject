@@ -71,15 +71,6 @@ const router = createBrowserRouter([
             element:<Buyproduct></Buyproduct>
     
           },
-          
-
-        
-
-    
-      
-
-
-
 
    ]
   },
