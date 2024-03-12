@@ -26,7 +26,6 @@ function Form() {
             data.map((a)=>{
               return(
                 <tr>
-
                 <td>{a.name}</td>
                 <td>{a.age}</td>
                 </tr>
