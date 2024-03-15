@@ -46,6 +46,7 @@ export const productApi = createApi({
           url:`/${product.id}`,
           method:"put",
           body:product
+          
         }
       }
     })
