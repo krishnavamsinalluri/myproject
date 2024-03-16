@@ -1,9 +1,12 @@
-
+import { Outlet } from "react-router-dom"
 function App(){
     return(
         <div>
-        <h1>vamsi</h1>
-       </div>
+        <div className="card">
+            <Outlet></Outlet>
+        </div>
+
+      </div>
     )
 }
   export default App
