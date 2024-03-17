@@ -7,8 +7,8 @@ export const tikecksApi = createApi({
         query: (tikecks) => `?from=${tikecks.from}&to=${tikecks.to}`,
       }),
       getAlltikets:builder.query({
-        query:(tikecks)=>{
-          return `/${tikecks}`
+        query:()=>{
+          return `/`
         }
       }),
   

@@ -9,7 +9,7 @@ function Adimdashboard() {
     <div>
         <div>
             {
-                from==="Eluru" && to==="Hyderbad" &&<Elurubus></Elurubus>
+                from==="Eluru" && to==="Hyderabad" &&<Elurubus></Elurubus>
             }
             {
               from==="Rajahmundry" && to==="Visakapatanam" && <Rajahmundry></Rajahmundry>

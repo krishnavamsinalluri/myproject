@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import Mainpage from './features/Mainpage';
 import Adimdashboard from './features/Adimdashboard';
+import Busseat from './features/Busseat';
 
 const router=createBrowserRouter([
   {
@@ -16,9 +17,13 @@ const router=createBrowserRouter([
 },
 {
   path:"/dashboard",
-  element:<Adimdashboard></Adimdashboard>,
+  element:<Adimdashboard></Adimdashboard>},
+  {
+    path:"/dashboard/Bus",
+    element:<Busseat></Busseat>
+  }
 
-}
+
 
 ])
 
