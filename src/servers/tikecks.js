@@ -6,15 +6,15 @@ export const tikecksApi = createApi({
       gettiketsByName: builder.query({
         query: (tikecks) => `?from=${tikecks.from}&to=${tikecks.to}`,
       }),
-      getElurubus:builder.query({
+      getAlltikets:builder.query({
         query:(tikecks)=>{
-          return `/tikecks${tikecks.id}`
+          return `/${tikecks}`
         }
-      })
+      }),
   
    }),
   })
   
   // Export hooks for usage in functional components, which are
   // auto-generated based on the defined endpoints
-  export const {useGettiketsByNameQuery,useLazyGettiketsByNameQuery,useGetElurubusQuery} =tikecksApi
+  export const {useGettiketsByNameQuery,useLazyGettiketsByNameQuery,useGetAlltiketsQuery} =tikecksApi

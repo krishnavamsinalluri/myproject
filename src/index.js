@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import Mainpage from './features/Mainpage';
 import Adimdashboard from './features/Adimdashboard';
-import Elurubus from './features/Elurubus';
 
 const router=createBrowserRouter([
   {
@@ -18,10 +17,6 @@ const router=createBrowserRouter([
 {
   path:"/dashboard",
   element:<Adimdashboard></Adimdashboard>,
-  children:([{
-    path:`/dashboard/tikecks/:bid`,
-    element:<Elurubus></Elurubus>
-  }])
 
 }
 

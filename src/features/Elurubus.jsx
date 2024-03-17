@@ -1,17 +1,21 @@
-import React from 'react'
-import { useGetElurubusQuery } from '../servers/tikecks'
-import { useParams } from 'react-router-dom'
+import React from 'react';
+import { useGetAlltiketsQuery } from '../servers/tikecks';
 
 function Elurubus() {
- var {bid} =   useParams()
-var {data}=useGetElurubusQuery(bid)
+  var { isLoading, data } = useGetAlltiketsQuery();
+  console.log(data);
+
   return (
     <div>
-        <div>
-            <h1>vamsi</h1>
- </div>
+      <div>
+        {data && data.map((bus) => {
+          return (
+            <li key={bus.id}>{bus.from}</li>
+          );
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Elurubus
+export default Elurubus;
