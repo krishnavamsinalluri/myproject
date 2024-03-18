@@ -28,4 +28,8 @@ export const seatsApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {useGetallSeatQuery,useUpdatetickMutation} = seatsApi
+export const {useGetallSeatQuery,
+    useLazyGetallSeatQuery,
+    useUpdatetickMutation,
+    useLazyUpdatetickMutation
+} = seatsApi

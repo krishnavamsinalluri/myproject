@@ -6,26 +6,23 @@ function Elurubus() {
   console.log(data);
   return (
     <div>
-      <div >
+      <div style={{textAlign:"center"}}>
         {
           data && data.map((bus)=>{
             if(bus.from==="Eluru" && bus.to==="Hyderabad"){
               return(
-                <div style={{alignItems:"center"}} >
+                <div  >
                     <div >
                     <h4>{bus.from}<i class="bi bi-arrow-right"></i>{bus.to}</h4> 
                     </div>
-                    <Link to="/dashboard/Bus">
 
-                    <div className='col d-flex ' >
-
-                    <div className=' card  m-2 p-4 bg-primary ' >
+                    <Link to="/dashboard/Bus" className='text-decoration-none'>
+                    <div className='d-flex justify-content-center' >
+                    <div className=' card w-50  m-2 p-4 bg-primary ' >
                   <span> <b>{bus.start}</b> <i class="bi bi-arrow-right"></i> {bus.end} <span> From:<b>{bus.price}</b></span></span> 
                  <h6>{bus.busname}<i class="bi bi-bus-front"></i></h6> 
                   <span>{bus.bustype}</span>
-
                  </div>
-
                 </div>
                 </Link>
 
@@ -36,6 +33,7 @@ function Elurubus() {
           })
         }
       </div>
+
     </div>
   )
 
