@@ -9,6 +9,7 @@ import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import Mainpage from './features/Mainpage';
 import Adimdashboard from './features/Adimdashboard';
 import Busseat from './features/Busseat';
+import Booking from './features/Booking';
 
 const router=createBrowserRouter([
   {
@@ -21,6 +22,9 @@ const router=createBrowserRouter([
   {
     path:"/dashboard/Bus",
     element:<Busseat></Busseat>
+  },{
+    path:'/Booking',
+    element:<Booking></Booking>
   }
 
 

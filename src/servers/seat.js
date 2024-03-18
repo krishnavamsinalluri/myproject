@@ -31,5 +31,9 @@ export const seatsApi = createApi({
 export const {useGetallSeatQuery,
     useLazyGetallSeatQuery,
     useUpdatetickMutation,
-    useLazyUpdatetickMutation
+
 } = seatsApi
+export const useLazyUpdatetickMutation = () => {
+    const { mutate: updatetickMutation } = useUpdatetickMutation();
+    return updatetickMutation;
+  };
