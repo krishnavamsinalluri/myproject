@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useGetallSeatQuery,  useUpdatetickMutation } from '../servers/seat';
+import { useGetallSeatQuery,  useLazyGetallSeatQuery,  useUpdatetickMutation } from '../servers/seat';
 
 function Busseat() {
   var navi=  useNavigate()
   const { isLoading, data } = useGetallSeatQuery();
   const [seatStatuses, setSeatStatuses] = useState();
   const [up] = useUpdatetickMutation();
-
+  const [rup]=useLazyGetallSeatQuery()
   function updateSeatStatus(id) {
     const updatedData = data.map(seats => {
 
@@ -16,10 +16,12 @@ function Busseat() {
       }
       return seats;
     });
-    up({id, seatstatues: "book"});
+    up({id, seatstatues: "book"}).then((res)=>{
+      rup()
+    });
     setSeatStatuses(...updatedData);
     console.log(updatedData);
-    alert(JSON.stringify(updatedData))
+    // alert(JSON.stringify(updatedData))
   }
     function ab(){
       navi('/Booking')
@@ -33,6 +35,7 @@ function Busseat() {
         <table  className='border w-5' >
           <thead>
           <tr ><th></th><h2 class="bi bi-crosshair"></h2>
+          <th><b class="bi bi-display text-algin-end"></b></th>
           </tr>
 
             <tr>
@@ -64,8 +67,8 @@ function Busseat() {
                 <table className='border '  >
           <thead>
             <tr>
-            <th><i class="bi bi-app text-primary "></i></th>
-            <th><i class="bi bi-app text-success"></i></th>
+            <th><i class="bi bi-dice-1 text-primary"></i></th>
+            <th><i class="bi bi-dice-1-fill text-success"></i></th>
            </tr>
          </thead>
          <tbody>
