@@ -1,2 +1,13 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 @import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+#book{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+#main{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}

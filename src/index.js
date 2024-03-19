@@ -10,6 +10,7 @@ import Mainpage from './features/Mainpage';
 import Adimdashboard from './features/Adimdashboard';
 import Busseat from './features/Busseat';
 import Booking from './features/Booking';
+import Bookingstatus from './features/Bookingstatus';
 
 const router=createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router=createBrowserRouter([
   },{
     path:'/Booking',
     element:<Booking></Booking>
+  },
+  {
+    path:"/Statues",
+    element:<Bookingstatus></Bookingstatus>
   }
 
 
