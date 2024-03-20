@@ -1,5 +1,6 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 @import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+
 #book{
     display: flex;
     justify-content: center;
@@ -10,4 +11,23 @@
     display: flex;
     justify-content: center;
     margin-top: 150px;
+
+}
+#dd{
+    display: flex;
+    justify-content: center;
+}
+#pic{
+    width: "100px";
+    display: flex;
+    justify-content: center;
+}
+#text{
+    text-align: center;
+}
+#frist{
+    background-image: image-set("https://st.redbus.in/Images/India/ContextualLogin/generic_banner_Ind.png");
+    background-repeat: no-repeat;
+    background-size:100%;
+
 }
