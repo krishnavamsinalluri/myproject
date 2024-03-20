@@ -25,7 +25,7 @@
 #text{
     text-align: center;
 }
-#frist{
+.frist{
     background-image: image-set("https://st.redbus.in/Images/India/ContextualLogin/generic_banner_Ind.png");
     background-repeat: no-repeat;
     background-size:100%;

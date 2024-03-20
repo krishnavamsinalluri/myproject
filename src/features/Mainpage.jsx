@@ -23,8 +23,8 @@ function Mainpage() {
         }
     })
   return (
-    <div >
-      <div id='frist'>
+    <div className='frist'>
+      <div >
       <div id='main'>
             <form onSubmit={main.handleSubmit} className='w-25 shadow-lg p-4 bg-secondary bg-opacity-75 needs-validation' >
             <input type="text" placeholder='From' name='from' onChange={main.handleChange}/><br />
