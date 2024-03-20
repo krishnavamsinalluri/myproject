@@ -3,15 +3,13 @@ import { useGetbookingQuery } from '../servers/book'
 
 function Bookingstatus() {
     var {data}=useGetbookingQuery()
+    console.log(data)
   return (
     <div>
         <div>
             <h1>Payment Detailes</h1>
-            <select name="" id="">
-                <option>please select</option>
-                <option value=""><a href="https://aa.phonepe.com/client/">phone</a></option>
-            </select>
-       </div>
+            <img src="https://img.freepik.com/free-vector/loading-circles-blue-gradient_78370-2646.jpg?size=338&ext=jpg&ga=GA1.1.735520172.1710806400&semt=ais" alt="" />
+      </div>
     </div>
   )
 }
