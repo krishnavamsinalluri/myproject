@@ -1,20 +1,22 @@
-import React from 'react';
+import React from 'react'
 import { useGetAlltiketsQuery } from '../servers/tikecks';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-function Elurubus() {
-  var { isLoading, data } = useGetAlltiketsQuery();
-  console.log(data);
-  return (
 
-    <div className='Elurubus'>
+function Hyderabadbus() {
+    var { isLoading, data } = useGetAlltiketsQuery();
+    console.log(data);
+   
+  return (
+    <div>
+           <div className='Elurubus'>
       <div>
         <Navbar></Navbar>
       </div>
       <div style={{textAlign:"center"}}>
         {
           data && data.map((bus)=>{
-            if(bus.from==="Eluru" && bus.to==="Hyderabad"){
+            if(bus.from==="Hyderabad" && bus.to==="Eluru"){
               return(
                 <div  >
 
@@ -39,7 +41,9 @@ function Elurubus() {
     </div>
   )
 
-};
 
+    </div>
+  )
+}
 
-export default Elurubus;
+export default Hyderabadbus

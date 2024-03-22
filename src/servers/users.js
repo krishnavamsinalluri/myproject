@@ -9,10 +9,20 @@ export const usersApi = createApi({
     getUsersByName: builder.query({
       query: (user) => `?username=${user.username}&password=${user.password}`,
     }),
+    Addnewuser:builder.mutation({
+      query:(newuser)=>{
+        return {
+          url:`/`,
+          method:"post",
+          body:newuser
+        }
+      }
+    })
+
 
  }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {useGetUsersByNameQuery,useLazyGetUsersByNameQuery} = usersApi
+export const {useGetUsersByNameQuery,useLazyGetUsersByNameQuery,useAddnewuserMutation} = usersApi

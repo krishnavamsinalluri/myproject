@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useGetallSeatQuery,  useLazyGetallSeatQuery,  useUpdatetickMutation } from '../servers/seat';
+import Navbar from './Navbar';
 
 function Busseat() {
   var navi=  useNavigate()
@@ -29,6 +30,9 @@ function Busseat() {
 
   return (
     < div className='seat'>
+      <div>
+        <Navbar></Navbar>
+      </div>
       <div className='container'>
       <div className='w-100'>
         <div className='d-flex flex-wrap w-75 m-4'>

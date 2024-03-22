@@ -1,11 +1,15 @@
 import React from 'react'
 import { useGetbookingQuery } from '../servers/book'
+import Navbar from './Navbar'
 
 function Bookingstatus() {
     var {isLoading,data}=useGetbookingQuery()
     console.log(data)
   return (
     <div>
+      <div>
+        <Navbar></Navbar>
+      </div>
         <div>
           {
            data && data.map((a)=>{

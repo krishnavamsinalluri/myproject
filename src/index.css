@@ -4,6 +4,7 @@
 #book{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
 }
 .mains{
@@ -44,4 +45,36 @@ background-color: lightblue;
 }
 .bookstatues{
         background-color: red;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+}
+.log{
+    background-image: image-set("https://st.redbus.in/Images/India/ContextualLogin/generic_banner_Ind.png");
+    background-repeat: no-repeat;
+    background-size:100%;
+    height: 600px;
+
+
+}
+.reg{
+    background-image: image-set("https://st.redbus.in/Images/India/ContextualLogin/generic_banner_Ind.png");
+    background-repeat: no-repeat;
+    background-size:100%;
+    height: 600px;
+}
+#register{
+    
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        height: 100vh;  
+}
+#head{
+        display: flex;
+        list-style: none;
+        justify-content: end;   
 }

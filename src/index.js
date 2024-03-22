@@ -12,6 +12,7 @@ import Busseat from './features/Busseat';
 import Booking from './features/Booking';
 import Bookingstatus from './features/Bookingstatus';
 import Login from './features/login';
+import Register from './features/Register';
 const router=createBrowserRouter([
   {
     path:'/',
@@ -35,6 +36,10 @@ const router=createBrowserRouter([
   {
     path:"/Statues",
     element:<Bookingstatus></Bookingstatus>
+  },{
+    path:'/newuser',
+    element:<Register></Register>
+
   }
 
 
