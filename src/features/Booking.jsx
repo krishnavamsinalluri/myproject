@@ -16,7 +16,7 @@ var book=useFormik({
             navi('/Statues')
     }
   return (
-    <div>
+    <div className='Booking'>
         <div id='book'>
             <form onSubmit={book.handleSubmit} className='w-25 shadow-lg p-4 bg-secondary bg-opacity-75 needs-validation   ' style={{textAlign:"center"}}>
                 <input type="text" className='form-control' placeholder='Passenger Name ' name='name'onChange={book.handleChange}  /><br />
@@ -27,8 +27,8 @@ var book=useFormik({
                 <input type="text" className='form-control' placeholder='Bording Point ' name='bordeingpoint'onChange={book.handleChange}  /><br />
                 <input type="text" className='form-control' placeholder='Onbording Point' name="onbordingpoit" onChange={book.handleChange}  /><br />
 
-                    <button>Save</button><br /><br /><br />
-                    <button onClick={()=>{next()}}>Book</button>
+                    <button className='btn btn-primary'>Save</button><br /><br /><br />
+                    <button className='btn btn-warning' onClick={()=>{next()}}>Book</button>
 
             </form>
 

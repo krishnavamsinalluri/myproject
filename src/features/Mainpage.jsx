@@ -23,17 +23,19 @@ function Mainpage() {
         }
     })
   return (
-    <div className='frist'>
-      <div >
-      <div id='main'>
-            <form onSubmit={main.handleSubmit} className='w-25 shadow-lg p-4 bg-secondary bg-opacity-75 needs-validation' >
+    <div className='frist row'>
+      <div className='col' >
+        <img src="" alt="" />
+      </div>
+ 
+      <div className='mains col'>
+           <form onSubmit={main.handleSubmit} className=' shadow-lg p-4 bg-secondary bg-opacity-75 needs-validation' >
             <input type="text" placeholder='From' name='from' onChange={main.handleChange}/><br />
             <input type="text" placeholder='To' name="to"onChange={main.handleChange} /><br />
             <input type="date" name='date' onChange={main.handleChange} /><br />
             <button>save</button>
             </form>
             </div>
-      </div>
 
     </div>
   )

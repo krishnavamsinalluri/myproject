@@ -5,7 +5,7 @@ function Elurubus() {
   var { isLoading, data } = useGetAlltiketsQuery();
   console.log(data);
   return (
-    <div>
+    <div className='Elurubus'>
       <div style={{textAlign:"center"}}>
         {
           data && data.map((bus)=>{

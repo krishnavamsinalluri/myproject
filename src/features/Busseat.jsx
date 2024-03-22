@@ -28,11 +28,11 @@ function Busseat() {
     }
 
   return (
-    <>
+    < div className='seat'>
       <div className='container'>
       <div className='w-100'>
         <div className='d-flex flex-wrap w-75 m-4'>
-        <table  className='border w-5' >
+        <table  className=' border border-dark w-5' >
           <thead>
           <tr ><th></th><h2 class="bi bi-crosshair"></h2>
           <th><b class="bi bi-display text-algin-end"></b></th>
@@ -64,7 +64,7 @@ function Busseat() {
 
             <div className='w-25 m-5 ' >
                 <div className='justify-content-center'>
-                <table className='border '  >
+                <table className='border border-dark '  >
           <thead>
             <tr>
             <th><i class="bi bi-dice-1 text-primary"></i></th>
@@ -77,7 +77,7 @@ function Busseat() {
             <td>Booked</td>
           </tr>
           <tr>          
-              <td style={{textAlign:"center"}}><button onClick={()=>{ab()}}>Book</button></td>
+              <td style={{textAlign:"center"}}><button  className='btn btn-warning' onClick={()=>{ab()}}>Book</button></td>
               </tr>
          </tbody>
         </table>
@@ -88,7 +88,7 @@ function Busseat() {
      </div>
  </div>
      
-    </>
+    </div>
   );
 }
 

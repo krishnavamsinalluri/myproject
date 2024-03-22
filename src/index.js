@@ -11,10 +11,15 @@ import Adimdashboard from './features/Adimdashboard';
 import Busseat from './features/Busseat';
 import Booking from './features/Booking';
 import Bookingstatus from './features/Bookingstatus';
-
+import Login from './features/login';
 const router=createBrowserRouter([
   {
-    path:"/",
+    path:'/',
+    element:<Login></Login>
+  },
+
+  {
+    path:"/mainpage",
     element:<Mainpage></Mainpage>
 },
 {
