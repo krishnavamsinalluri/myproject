@@ -9,7 +9,6 @@ function Form() {
         console.log(values);
         setData([...data,values])
       }
-
     })
   return (
     <div>
@@ -17,7 +16,6 @@ function Form() {
      Name:   <input type="text" name='name'  onChange={deat.handleChange}  /><br />
        Age: <input type="text"  name='age' onChange={deat.handleChange}/><br />
         <button>save</button>
-
       </form>
       <table>
         <th>Name</th>
@@ -29,7 +27,6 @@ function Form() {
                 <td>{a.name}</td>
                 <td>{a.age}</td>
                 </tr>
-
               )
             })
             }
@@ -37,5 +34,4 @@ function Form() {
     </div>
   )
 }
-
 export default Form
