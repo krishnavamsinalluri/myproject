@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <div>
-                         <div>
+              <div>
             <nav class="navbar bg-primary">
                 <div class="container-fluid">
                     <h3 className="navbar-brand mb-0 h1 " ><h1 className="bi bi bi-person-circle text-light"> {username}</h1></h3>
